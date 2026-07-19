@@ -27,3 +27,17 @@ jobs:
         run: |
           python --version
           pip list
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Docker Image
+        run: |
+          docker build -t pashantkumar007/churn-app:latest .
+
+      - name: Push Docker Image
+        run: |
+          docker push pashantkumar007/churn-app:latest
