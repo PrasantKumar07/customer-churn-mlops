@@ -1,0 +1,8 @@
+#! 0-customerchurnprediction-prashantkumar-namespace.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: customerchurnprediction-prashantkumar
+    labels:
+        com.docker.compose.project: customerchurnprediction-prashantkumar

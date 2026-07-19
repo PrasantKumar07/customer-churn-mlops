@@ -1,0 +1,10 @@
+#! kustomization.yaml
+# Generated code, do not edit
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+    - 0-customerchurnprediction-prashantkumar-namespace.yaml
+    - churn-app-deployment.yaml
+    - churn-app-expose.yaml
+    - churn-app-service.yaml
+    - default-network-policy.yaml

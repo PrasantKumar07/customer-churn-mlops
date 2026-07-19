@@ -1,0 +1,6 @@
+services:
+  churn-app:
+    image: churn-app
+    container_name: churn-container
+    ports:
+      - "8502:8501"

@@ -1,0 +1,21 @@
+# check if there is at least one published port
+
+#! churn-app-service.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Service
+metadata:
+    name: churn-app-published
+    namespace: customerchurnprediction-prashantkumar
+    labels:
+        com.docker.compose.project: customerchurnprediction-prashantkumar
+        com.docker.compose.service: churn-app
+spec:
+    selector:
+        com.docker.compose.project: customerchurnprediction-prashantkumar
+        com.docker.compose.service: churn-app
+    ports:
+        - name: churn-app-8502
+          port: 8502
+          protocol: TCP
+          targetPort: churn-app-8501

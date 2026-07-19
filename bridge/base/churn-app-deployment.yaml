@@ -1,0 +1,32 @@
+#! churn-app-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: churn-app
+    namespace: customerchurnprediction-prashantkumar
+    labels:
+        com.docker.compose.project: customerchurnprediction-prashantkumar
+        com.docker.compose.service: churn-app
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: customerchurnprediction-prashantkumar
+            com.docker.compose.service: churn-app
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: customerchurnprediction-prashantkumar
+                com.docker.compose.service: churn-app
+                com.docker.compose.network.default: "true"
+        spec:
+            containers:
+                - name: churn-container
+                  image: churn-app
+                  imagePullPolicy: IfNotPresent
+                  ports:
+                    - name: churn-app-8501
+                      containerPort: 8501

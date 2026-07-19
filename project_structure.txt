@@ -1,0 +1,11 @@
+📂 Project Structure
+
+/customer-churn-app/
+|-- app.py                  # Flask application
+|-- train.py                # The script to train and save model
+|-- Telco_Customer_Churn_Dataset.csv # Dataset
+|-- requirements.txt        # List of required Python libraries
+|-- /templates/
+|   |-- index.html          # User interface
+|-- /static/
+|   |-- background.jpg      # A background image for the UI

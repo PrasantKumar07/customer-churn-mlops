@@ -1,0 +1,18 @@
+#! churn-app-expose.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Service
+metadata:
+    name: churn-app
+    namespace: customerchurnprediction-prashantkumar
+    labels:
+        com.docker.compose.project: customerchurnprediction-prashantkumar
+        com.docker.compose.service: churn-app
+spec:
+    selector:
+        com.docker.compose.project: customerchurnprediction-prashantkumar
+        com.docker.compose.service: churn-app
+    ports:
+        - name: churn-app-8501
+          port: 8501
+          targetPort: churn-app-8501
