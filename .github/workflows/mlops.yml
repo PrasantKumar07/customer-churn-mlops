@@ -1,4 +1,4 @@
-name: Customer Churn CI
+name: Customer Churn CI/CD
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Repository
@@ -41,3 +41,10 @@ jobs:
       - name: Push Docker Image
         run: |
           docker push pashantkumar007/churn-app:v1
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f configmap.yaml
+          kubectl apply -f secret.yaml
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
